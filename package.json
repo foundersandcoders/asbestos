@@ -1,0 +1,40 @@
+{
+  "name": "asbestos",
+  "version": "1.0.0",
+  "description": "generate CRUD handler functions from a model constructor function",
+  "main": "index.js",
+  "dependencies": {
+    "faucet": "^0.0.1",
+    "istanbul": "^0.3.13",
+    "jshint": "^2.7.0",
+    "pre-commit": "^1.0.6",
+    "tape": "^4.0.0"
+  },
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "istanbul": "^0.3.13",
+    "jshint": "^2.7.0",
+    "pre-commit": "^1.0.6",
+    "tape": "^4.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/foundersandcoders/asbestos.git"
+  },
+  "keywords": [
+    "crud",
+    "handlers",
+    "automatic",
+    "model",
+    "constructor"
+  ],
+  "author": "William Fisher, Besart Shyti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/foundersandcoders/asbestos/issues"
+  },
+  "homepage": "https://github.com/foundersandcoders/asbestos"
+}
