@@ -66,9 +66,9 @@ An object with 4 methods:
 
 ```.create(req, res)```: a function that takes a hapi request and response object. It passes req.payload to the constructor's create method and forwards the create method's response to the response parameter.
 
-```.findOne(req, res)```: a function that takes a hapi request and response object. It passes req.id to the constructor's findOne method and forwards the findOne method's response to the response parameter.
+```.findOne(req, res)```: a function that takes a hapi request and response object. It passes req.params.id to the constructor's findOne method and forwards the findOne method's response to the response parameter.
 
-```.update(req, res)```: a function that takes a hapi request and response object. It passes req.id and req.payload to the constructor's update method and forwards the update method's response to the response parameter.
+```.update(req, res)```: a function that takes a hapi request and response object. It passes req.params.id and req.payload to the constructor's update method and forwards the update method's response to the response parameter.
 
 ```.delete(req, res)```: a function that takes a hapi request and response object. It passes req.id to the constructor's delete method and forwards the delete method's response to the response parameter.
 
