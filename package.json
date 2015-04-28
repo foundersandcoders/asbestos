@@ -12,18 +12,27 @@
   },
   "devDependencies": {
     "faucet": "0.0.1",
+    "hapi": "^8.4.0",
     "istanbul": "^0.3.13",
     "jshint": "^2.7.0",
     "pre-commit": "^1.0.6",
+    "request": "^2.55.0",
+    "russian-doll": "^1.0.1",
     "tape": "^4.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tape ./test/*.test.js | faucet",
+    "jshint": "jshint -c ./.jshintrc --exclude-path .gitignore .",
+    "coverage": "istanbul cover tape ./test/*.test.js && istanbul check-coverage --statements 95 --functions 95 --lines 95 --branches 95"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/foundersandcoders/asbestos.git"
   },
+  "pre-commit": [
+    "jshint",
+    "coverage"
+  ],
   "keywords": [
     "crud",
     "handlers",
