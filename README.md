@@ -3,7 +3,6 @@ Generate hapi CRUD handler functions from a model constructor function
 
 ## use
 ```js
-var handlers = require("asbestos")(Model);
 
 var route = {
   method: "POST",
@@ -12,37 +11,38 @@ var route = {
 }
 
 // model constructor function
-function Model () {
+var model = {
 
-  // instantiated model must expose create method
-  this.create = function (obj, cb) {
+  // model must expose create method
+  create: function (obj, cb) {
 
     //... do some db stuff
     return cb("created");
-  };
+  },
 
-  // instantiated model must expose findOne method
-  this.findOne = function (criteria, cb) {
+  // model must expose findOne method
+  findOne: function (criteria, cb) {
 
     //... do some db stuff
     return cb("found");
-  };
+  },
 
-  // instantiated model must expose update method
-  this.update = function (criteria, changes, cb) {
+  // model must expose update method
+  update: function (criteria, changes, cb) {
 
     //... do some db stuff
     return cb("updated");
-  };
+  },
 
-  // instantiated model must expose delete method
-  this.delete = function (criteria, cb) {
+  // model must expose delete method
+  del: function (criteria, cb) {
 
     //... do some db stuff
     return cb("deleted");
-  };
+  }
 }
 
+var handlers = require("asbestos")(model);
 
 ```
 
@@ -52,7 +52,7 @@ asbestos exposes a single function that returns on object with 4 methods:
 1. ```.create```,
 2. ```.findOne```,
 3. ```.update```,
-4. ```.delete```
+4. ```.del```
 
 ### createHandlers(fn)
 
