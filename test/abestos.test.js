@@ -169,7 +169,7 @@ test("#find()", function (t){
 			st.end();
 		});
 	});
-})
+});
 
 test("#findOne() should return 200 if found", function (t) {
 

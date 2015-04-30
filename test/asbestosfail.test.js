@@ -4,9 +4,6 @@ var test = require("tape");
 var asbestos = require("..");
 var hapi = require("hapi");
 var server = new hapi.Server();
-var request = require("request");
-var is = require("torf");
-
 
 server.connection({ port: 8000 });
 
