@@ -10,7 +10,7 @@ var route = {
   handler: handlers.create
 }
 
-// model constructor function
+// model prototype
 var model = {
 
   // model must expose create method
@@ -40,6 +40,13 @@ var model = {
     //... do some db stuff
     return cb("deleted");
   }
+
+  // model must expose search method
+  find: function (criteria, cb) {
+
+    //... do some db stuff
+    return cb("deleted");
+  }
 }
 
 var handlers = require("asbestos")(model);
@@ -48,29 +55,32 @@ var handlers = require("asbestos")(model);
 
 ## api
 
-asbestos exposes a single function that returns on object with 4 methods:
-1. ```.create```,
-2. ```.findOne```,
-3. ```.update```,
-4. ```.del```
+asbestos exposes a single function that returns on object with 5 methods:
+1. ```.create```
+2. ```.find```
+3. ```.findOne```
+4. ```.update```
+5. ```.del```
 
-### createHandlers(fn)
+### createHandlers(obj)
 
 **_params_**
 
-```fn```: the constructor function that returns an object with create, findOne, update, and delete methods.
+```obj```: an object with create, find, findOne, update, and del methods.
 
 **_returns_**
 
-An object with 4 methods:
+An object with 5 methods:
 
-```.create(req, res)```: a function that takes a hapi request and response object. It passes req.payload to the constructor's create method and forwards the create method's response to the response parameter.
+```.create(req, res)```: a hapi handler function. It passes req.payload to the constructor's create method. It returns the object just created on success.
 
-```.findOne(req, res)```: a function that takes a hapi request and response object. It passes req.params.id to the constructor's findOne method and forwards the findOne method's response to the response parameter.
+```.find(req, res)```: a hapi handler function. It passes req.query to the constructor's find method. It returns the matched documents on success. It returns an empty array if not found.
 
-```.update(req, res)```: a function that takes a hapi request and response object. It passes req.params.id and req.payload to the constructor's update method and forwards the update method's response to the response parameter.
+```.findOne(req, res)```: a hapi handler function. It passes req.params.id to the constructor's findOne method. It returns the matched document on success. It returns an empty object and a 404 if not found.
 
-```.delete(req, res)```: a function that takes a hapi request and response object. It passes req.id to the constructor's delete method and forwards the delete method's response to the response parameter.
+```.update(req, res)```: a hapi handler function. It passes req.params.id and req.payload to the constructor's update method. It returns the updated document on success. It returns an empty object and a 404 if not found.
+
+```.del(req, res)```: a hapi handler function. It passes req.params.id to the constructor's delete method. It returns the deleted document on success. It returns an empty object and a 404 if not found.
 
 ## license
 
