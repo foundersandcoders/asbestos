@@ -1,6 +1,6 @@
 {
   "name": "asbestos",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "generate CRUD handler functions from a model constructor function",
   "main": "index.js",
   "dependencies": {
@@ -8,7 +8,8 @@
     "istanbul": "^0.3.13",
     "jshint": "^2.7.0",
     "pre-commit": "^1.0.6",
-    "tape": "^4.0.0"
+    "tape": "^4.0.0",
+    "torf": "^1.0.6"
   },
   "devDependencies": {
     "faucet": "0.0.1",
@@ -17,7 +18,7 @@
     "jshint": "^2.7.0",
     "pre-commit": "^1.0.6",
     "request": "^2.55.0",
-    "russian-doll": "^1.0.1",
+    "russian-doll": "^1.0.5",
     "tape": "^4.0.0"
   },
   "scripts": {
