@@ -68,6 +68,7 @@ asbestos exposes a single function that returns on object with 5 methods:
 
 ```obj```: an object with create, find, findOne, update, and del methods.
 
+
 **_returns_**
 
 An object with 5 methods:
